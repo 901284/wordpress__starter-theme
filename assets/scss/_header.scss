@@ -1,0 +1,130 @@
+header {
+    background: white;
+    width: 100%;
+    padding: 0;
+    transition: 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            gap: 20px;
+            
+            .current-menu-item {
+                font-weight: bold;
+            }
+
+            li {
+                list-style: none;
+
+                .current-menu-item {
+                    font-weight: bold;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: var(--color-black);
+
+                    &:hover,
+                    &:active,
+                    &:link,
+                    &:visited {
+                        color: var(--color-black);
+                    }
+                }
+            }
+        }
+
+        a {
+            z-index: 1000;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    .scrolled & {
+        padding: .5rem 0;
+    }
+
+    #menu-header {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .menu-toggle {
+        padding: 1.25rem;
+        position: relative;
+        cursor: pointer;
+        z-index: 1000;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        .bar {
+            width: 30px;
+            height: 4px;
+            background-color: var(--color-black);
+            margin: 3px 0;
+            transition: 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+
+            .opened & {
+                
+                &:first-child {
+                    transform: rotate(40deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    transform: rotate(-40deg);
+                    margin-top: -14px;
+                }
+            }
+        }
+
+    }
+
+    .mobile-menu {
+       background: var(--color-white);
+       position: absolute;
+       top: 0;
+       left: -100%;
+       width: 100%;
+       height: 100vh;
+       transition: 200ms ease;
+       opacity: 0;
+
+       .opened & {
+        left: 0;
+        opacity: 1;
+       }
+
+       &__items {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+            > ul {
+            list-style: none;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            }
+       }
+    }
+}
+

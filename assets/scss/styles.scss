@@ -1,0 +1,78 @@
+@forward './normalize';
+@forward './header';
+@forward './helpers';
+@forward './footer';
+@forward './variables';
+@forward './breakpoints';
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+/*
+Theme Name: Ithaca
+Text Domain: Ithaca
+Version: 1.0
+Description: A boring, roboust WordPress template.
+Tags: responsive, cpt
+Author: boolean
+*/
+
+:root {
+   --color-white: white;
+   --color-black: black;
+
+   --line-height: 1.75;
+   --line-height-list: 2;
+
+   --font-family: 'Source Sans Pro', Helvetica, Arial sans-serif;
+}
+
+body {
+   font-size: 16px;
+   font-family: var(--font-family);
+   line-height: var(--line-height);
+}
+
+h1 {
+   // text-transform: uppercase;
+   margin-bottom: 1rem;
+   font-weight: 900;
+   font-size: 2rem;
+
+   @media (min-width: '768px') {
+      font-size: 2.1rem;
+   }
+}
+
+h2, h3, h4 {
+   margin-bottom: 0.75rem;
+}
+
+li {
+   line-height: var(--line-height-list);
+   font-weight: 300;
+}
+
+p {
+   line-height: var(--line-height);
+   font-weight: 300;
+   margin-bottom: 0.75rem;
+   font-size: 0.75rem;
+
+   @media (min-width: '768px') {
+      font-size: 1rem;
+   }
+}
+
+a {
+   color: var(--color-black);
+
+   &:visited,
+   &:active,
+   &:link,
+   &:hover {
+      color: var(--color-black);
+   }
+}
+
+img {
+   margin: 1.25rem 0;
+}
