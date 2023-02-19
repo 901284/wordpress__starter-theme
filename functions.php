@@ -12,8 +12,8 @@
 
 add_action('after_setup_theme', 'ithaca_theme_support');
 
+// register styles
 function ithaca_register_styles() {
-    // register styles
 
     $version = wp_get_theme()->get('Version');
 
@@ -23,6 +23,7 @@ function ithaca_register_styles() {
 
 add_action('wp_enqueue_scripts', 'ithaca_register_styles');
 
+// register menus
 function ithaca_menus() {
     $locations = array(
         // key and description
@@ -35,9 +36,8 @@ function ithaca_menus() {
 
 add_action('init', 'ithaca_menus');
 
-
+// register scripts
 function ithaca_register_scripts() {
-    # register scripts
 
     wp_enqueue_script('ithaca-scripts', get_template_directory_uri() . "./assets/js/main.js", '1.0', true);
 
@@ -45,5 +45,11 @@ function ithaca_register_scripts() {
 
 add_action('wp_enqueue_scripts', 'ithaca_register_scripts');
 
+// trim posts excerpt length on archive pages
+function ithaca_custom_excerpt_length( $length ) {
+	return 20;
+}
+
+add_filter( 'excerpt_length', 'ithaca_custom_excerpt_length', 999 );
 
 ?>

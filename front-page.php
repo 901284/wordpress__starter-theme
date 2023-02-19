@@ -1,6 +1,5 @@
 <?php
 // page to overwrite home page if seperate to landing
-// https://www.youtube.com/watch?v=-h7gOJbIpmo&t=354s, 1:40:53
 
 $landing_hero = get_field( "hero_image" );
 ?>

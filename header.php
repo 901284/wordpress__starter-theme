@@ -52,6 +52,7 @@
 </header>
 
 <script>
+    // TODO: figure out why this doesn't like being called in the main.js file
     // hamburger and mobile toggle
     const menuToggle = document.querySelector('.menu-toggle');
 

@@ -1,3 +1,4 @@
+// container
 .container {
     max-width: 768px;
     margin: 0 auto;
@@ -8,6 +9,7 @@
     }
 }
 
+// main content class
 .main {
     margin-top: 60px;
     margin-bottom: 60px;
@@ -19,6 +21,7 @@
     
  }
 
+// hero images
  .hero__image {
     width: 100%;
     position: relative;
@@ -42,6 +45,7 @@
     }
  
     img {
+       margin: 0;
        position: absolute;
        top: 0;
        left: 0;
@@ -50,3 +54,62 @@
        object-fit: cover;
     }
  }
+
+ // archive cards and layout
+ .card__grid {
+   display: grid;
+   gap: 20px;
+   grid-template-columns: 100%;
+
+   @media (min-width: '768px') {
+      grid-template-columns: repeat(3, 1fr);
+   }
+ }
+
+ .card {
+   background: #f5f5f5;
+
+   &__content {
+      padding: 1em;
+   }
+
+   figure {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 100%;
+   }
+
+   img {
+      margin: 0;
+      width: 100%;
+      object-fit: cover;
+   }
+ }
+
+ // pagination
+.pagination {
+   text-align: center;
+   width: 100%;
+   margin: 3rem 0;
+
+   .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+   }
+
+   .page-numbers {
+      text-decoration: none;
+      color: var(--color-white);
+      background: var(--color-black);
+      padding: 1em;
+   }
+}
+
+// search forms
+#searchsubmit {
+   background: none;
+   border: none;
+}
